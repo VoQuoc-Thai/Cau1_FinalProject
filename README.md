@@ -7,22 +7,22 @@
 x_(t+1) = x_t + ∆
 		+ x_t càng xa x^* về phía bên phải thì f^' ( x_t) càng lớn hơn 0 (ngược lại). Lượng di chuyển ∆, một cách trực quan nhất, là tỉ lệ thuận với  - f^' ( x_t).
 Công thức cập nhật: x_(t+1) = x_t – η f^' ( x_t) (η: learning rate) 
-* GD cho hàm nhiều biến: tương tự như hàm một biến, thuật toán cho hàm nhiều biến cũng bắt đầu với một điểm dự đoán x_0, ở vòng lặp thứ t, theo quy tắc cập nhật:
-x_(t+1) = x_t – η ∇ f( x_t )
-Trong đó ký hiệu ∇ f( x_t) – hình tam giác ngược đọc là nabla.
+	+ GD cho hàm nhiều biến: tương tự như hàm một biến, thuật toán cho hàm nhiều biến cũng bắt đầu với một điểm dự đoán x_0, ở vòng lặp thứ t, theo quy tắc cập nhật:
+	x_(t+1) = x_t – η ∇ f( x_t )
+	Trong đó ký hiệu ∇ f( x_t) – hình tam giác ngược đọc là nabla.
 Theo quy tắc, luôn luôn đi ngược hướng với đạo hàm. Quá trình này tiếp tục cho đến khi đạt được một điểm gần đúng của nghiệm tối ưu hoặc khi đạt đến một số lần lặp tối đa được đặt trước.
 ### Stochastic Gradient Descent (SGD):
-Stochastic Gradient Descent (SGD) là một biến thể của thuật toán Gradient Descent, được sử dụng phổ biến trong lĩnh vực học máy. Phương pháp này cập nhật các tham số của mô hình dựa trên gradient của hàm mất mát, tính toán trên một mini-batch ngẫu nhiên từ tập dữ liệu huấn luyện thay vì toàn bộ tập dữ liệu.
+- Stochastic Gradient Descent (SGD) là một biến thể của thuật toán Gradient Descent, được sử dụng phổ biến trong lĩnh vực học máy. Phương pháp này cập nhật các tham số của mô hình dựa trên gradient của hàm mất mát, tính toán trên một mini-batch ngẫu nhiên từ tập dữ liệu huấn luyện thay vì toàn bộ tập dữ liệu.
 Quá trình SGD được mô tả như sau:
-	Khởi tạo: Bắt đầu bằng việc ngẫu nhiên khởi tạo các tham số của mô hình.
-	Đặt tham số: Xác định số lần lặp và tốc độ học (alpha) để cập nhật tham số.
-	Lặp: Thực hiện các bước sau cho đến khi mô hình hội tụ hoặc đạt đến số lần lặp tối đa:
-	Xáo trộn tập dữ liệu huấn luyện để tạo tính ngẫu nhiên.
-	Lặp lại từng ví dụ huấn luyện theo thứ tự đã xáo trộn.
-	Tính toán độ dốc của hàm chi phí đối với các tham số mô hình bằng cách sử dụng mẫu đào tạo hiện tại.
-	Cập nhật các tham số mô hình bằng cách thực hiện một bước theo hướng gradient âm, được chia tỷ lệ theo tốc độ học.
-	Đánh giá các tiêu chí hội tụ, chẳng hạn như sự khác biệt trong hàm chi phí giữa các lần lặp của gradient.
-	Trả về kết quả: Sau khi đáp ứng các tiêu chí hội tụ hoặc đạt đến số lần lặp tối đa, trả về các tham số mô hình được tối ưu hóa.
+	+ Khởi tạo: Bắt đầu bằng việc ngẫu nhiên khởi tạo các tham số của mô hình.
+	+ Đặt tham số: Xác định số lần lặp và tốc độ học (alpha) để cập nhật tham số.
+	+ Lặp: Thực hiện các bước sau cho đến khi mô hình hội tụ hoặc đạt đến số lần lặp tối đa:
+		+ Xáo trộn tập dữ liệu huấn luyện để tạo tính ngẫu nhiên.
+		+ Lặp lại từng ví dụ huấn luyện theo thứ tự đã xáo trộn.
+		+ Tính toán độ dốc của hàm chi phí đối với các tham số mô hình bằng cách sử dụng mẫu đào tạo hiện tại.
+		+ Cập nhật các tham số mô hình bằng cách thực hiện một bước theo hướng gradient âm, được chia tỷ lệ theo tốc độ học.
+		+ Đánh giá các tiêu chí hội tụ, chẳng hạn như sự khác biệt trong hàm chi phí giữa các lần lặp của gradient.
+		+ Trả về kết quả: Sau khi đáp ứng các tiêu chí hội tụ hoặc đạt đến số lần lặp tối đa, trả về các tham số mô hình được tối ưu hóa.
  ### Momentum:
 Chúng ta sử dụng Gradient Descent với Momentum để khắc phục hạn chế của thuật toán Gradient Descent. Động lượng giúp cải thiện tốc độ hội tụ của thuật toán bằng cách giữ lại một lượng thông tin về hướng di chuyển của các bước trước đó.
 Dưới đây là mô tả của Gradient Descent với Momentum:
