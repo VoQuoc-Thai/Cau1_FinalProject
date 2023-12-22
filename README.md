@@ -1,13 +1,13 @@
 # CÂU 1:
 ### Gradient Descent (GD):
-	Đây là một phương pháp tối ưu hóa được sử dụng để cập nhật các trọng số của mô hình dựa trên độ dốc của hàm Loss Function. Mục tiêu là điều chỉnh các trọng số sao cho hàm mất mát đạt được giá trị nhỏ nhất, tức là mô hình dự đoán kết quả gần với thực tế nhất. 
-	Hướng tiếp cận phổ biến nhất là xuất phát từ một điểm mà chúng ta coi là gần với nghiệm của bài toán, sau đó dùng một phép toán lặp để tiến dần đến điểm cần tìm, tức đến khi đạo hàm gần với 0.
-	GD cho hàm một biến:
-	Nếu đạo hàm của hàm số tại x_t: f^' ( x_t) > 0 thì  x_t nằm bên phải so với x^* (ngược lại). Để điểm tiếp theo  x_(t+1) gần với x^* hơn, di chuyển theo chiều ngược dấu với đạo hàm (ta di chuyển x_t về phía bên trái – phía âm.)
+- Đây là một phương pháp tối ưu hóa được sử dụng để cập nhật các trọng số của mô hình dựa trên độ dốc của hàm Loss Function. Mục tiêu là điều chỉnh các trọng số sao cho hàm mất mát đạt được giá trị nhỏ nhất, tức là mô hình dự đoán kết quả gần với thực tế nhất. 
+- Hướng tiếp cận phổ biến nhất là xuất phát từ một điểm mà chúng ta coi là gần với nghiệm của bài toán, sau đó dùng một phép toán lặp để tiến dần đến điểm cần tìm, tức đến khi đạo hàm gần với 0.
+* GD cho hàm một biến:
++ Nếu đạo hàm của hàm số tại x_t: f^' ( x_t) > 0 thì  x_t nằm bên phải so với x^* (ngược lại). Để điểm tiếp theo  x_(t+1) gần với x^* hơn, di chuyển theo chiều ngược dấu với đạo hàm (ta di chuyển x_t về phía bên trái – phía âm.)
 x_(t+1) = x_t + ∆
-	x_t càng xa x^* về phía bên phải thì f^' ( x_t) càng lớn hơn 0 (ngược lại). Lượng di chuyển ∆, một cách trực quan nhất, là tỉ lệ thuận với  - f^' ( x_t).
++ x_t càng xa x^* về phía bên phải thì f^' ( x_t) càng lớn hơn 0 (ngược lại). Lượng di chuyển ∆, một cách trực quan nhất, là tỉ lệ thuận với  - f^' ( x_t).
 Công thức cập nhật: x_(t+1) = x_t – η f^' ( x_t) (η: learning rate) 
-	GD cho hàm nhiều biến: tương tự như hàm một biến, thuật toán cho hàm nhiều biến cũng bắt đầu với một điểm dự đoán x_0, ở vòng lặp thứ t, theo quy tắc cập nhật:
+* GD cho hàm nhiều biến: tương tự như hàm một biến, thuật toán cho hàm nhiều biến cũng bắt đầu với một điểm dự đoán x_0, ở vòng lặp thứ t, theo quy tắc cập nhật:
 x_(t+1) = x_t – η ∇ f( x_t )
 Trong đó ký hiệu ∇ f( x_t) – hình tam giác ngược đọc là nabla.
 Theo quy tắc, luôn luôn đi ngược hướng với đạo hàm. Quá trình này tiếp tục cho đến khi đạt được một điểm gần đúng của nghiệm tối ưu hoặc khi đạt đến một số lần lặp tối đa được đặt trước.
