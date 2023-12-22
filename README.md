@@ -1,7 +1,7 @@
 # CÂU 1:
 ### Gradient Descent (GD):
-Đây là một phương pháp tối ưu hóa được sử dụng để cập nhật các trọng số của mô hình dựa trên độ dốc của hàm Loss Function. Mục tiêu là điều chỉnh các trọng số sao cho hàm mất mát đạt được giá trị nhỏ nhất, tức là mô hình dự đoán kết quả gần với thực tế nhất. 
-Hướng tiếp cận phổ biến nhất là xuất phát từ một điểm mà chúng ta coi là gần với nghiệm của bài toán, sau đó dùng một phép toán lặp để tiến dần đến điểm cần tìm, tức đến khi đạo hàm gần với 0.
+	Đây là một phương pháp tối ưu hóa được sử dụng để cập nhật các trọng số của mô hình dựa trên độ dốc của hàm Loss Function. Mục tiêu là điều chỉnh các trọng số sao cho hàm mất mát đạt được giá trị nhỏ nhất, tức là mô hình dự đoán kết quả gần với thực tế nhất. 
+	Hướng tiếp cận phổ biến nhất là xuất phát từ một điểm mà chúng ta coi là gần với nghiệm của bài toán, sau đó dùng một phép toán lặp để tiến dần đến điểm cần tìm, tức đến khi đạo hàm gần với 0.
 	GD cho hàm một biến:
 	Nếu đạo hàm của hàm số tại x_t: f^' ( x_t) > 0 thì  x_t nằm bên phải so với x^* (ngược lại). Để điểm tiếp theo  x_(t+1) gần với x^* hơn, di chuyển theo chiều ngược dấu với đạo hàm (ta di chuyển x_t về phía bên trái – phía âm.)
 x_(t+1) = x_t + ∆
